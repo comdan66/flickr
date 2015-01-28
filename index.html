@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tw">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta http-equiv="Content-Language" content="zh-tw">
+    <title>OA's Youtube</title>
+
+    <meta name="robots" content="index,follow">
+
+    <meta property="og:site_name" content="OA's Flickr" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:image" content="http://comdan66.github.io/flickr/img/og.png" />
+    <meta property="og:title" content="OA's Flickr" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:description" content="這是一個簡單快速搜尋 flickr 的前端工具，借由輸入想搜尋的圖片關鍵字而撈取出 flickr 上面的熱門照片! ..." />
+    <meta property="og:url" content="http://comdan66.github.io/flickr/" />
+
+    <meta name="description" content="這是一個簡單快速搜尋 flickr 的前端工具，借由輸入想搜尋的圖片關鍵字而撈取出 flickr 上面的熱門照片! ..." />
+    <meta name="keywords" content="吳政賢 | OA Wu | OA's Flickr | Flickr API | jQuery | javascript | scss | sass | html | css" />
+    <meta name="author" content="吳政賢(OA Wu)" />
+
+    <link href="./css/frame.css" rel="stylesheet" type="text/css">
+
+    <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
+    <script src="./res/imagesloaded_v3.1.8/imagesloaded.pkgd.min.js" language="javascript" type="text/javascript" /></script>
+    <script src="./res/masonry_v3.1.2/masonry.pkgd.min.js" language="javascript" type="text/javascript" /></script>
+    <script src="./res/underscore_v1.7.0/underscore-min.js" language="javascript" type="text/javascript" /></script>
+    <script src="./res/oa-imgLiquid.js" language="javascript" type="text/javascript" /></script>
+    <script src="./js/frame.js" language="javascript" type="text/javascript" /></script>
+
+  </head>
+  <body lang="zh-tw">
+    <div id='header'>
+      <div class='search'>
+        <div class='l'>
+          <input type='text' id='search' value='' placeholder='請輸入..' autofocus />
+        </div>
+        <div class='r'>
+          <button type='button' id='search_button'>搜尋</button>
+        </div>
+      </div>
+    </div>
+
+    <div id='loading'>
+      <div class='loading'></div>
+    </div>
+
+    <div id='container'>
+      <div id='units'>
+      </div>
+    </div>
+
+<script id='_unit' type='text/x-html-template'>
+  <div class='unit' data-id='<%=id%>'>
+    <div class='img'>
+      <img src='<%=src%>' />
+    </div>
+    <a href='<%=href%>' target='_blank'>
+      <div class='cover'>
+        <div class='title'><%=title%></div>
+        <div class='ownername'><%=ownername%></div>
+      </div>
+    </a>
+  </div>
+</script>
+
+  </body>
+</html>
+
+

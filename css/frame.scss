@@ -1,0 +1,248 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+
+@import "_oa";
+
+@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+
+* {
+  vertical-align: top;
+  @include selection(rgba(150, 180, 230, 1.0000), rgba(237, 239, 244, 1.0000));
+  @include font-smoothing(antialiased);
+
+  &, &:after, &:before {
+    @include box-sizing(border-box);
+  }
+}
+
+html {
+  height: 100%;
+  $headerHeight: 42px;
+
+  body {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: medium;
+    font-family: Monaco;
+    background: $mainBackgroundColor $mainBackgroundImage;
+    color: rgba(50, 50, 50, 0.7);
+    padding-top: $headerHeight + 8px;
+
+    @include font-smoothing(antialiased);
+    @include box-shadow(none);
+
+    #header {
+      display: inline-block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 0;
+      z-index: 99999;
+
+      width: 100%;
+      height: $headerHeight;
+      color: rgba(255, 255, 255, .8);
+      padding: 5px 10px 0 10px;
+
+      @include opacity(.9);
+      @include background-image(linear-gradient(top, rgba(75, 75, 75, 0.9) 0%, rgba(65, 65, 65, 0.9) 20%, rgba(45, 45, 45, 0.9) 90%, rgba(30, 30, 30, 0.9) 100%));
+      @include box-shadow(0 0 5px rgba(0, 0, 0, 0.8));
+
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.14902);
+        @include box-shadow(0 0 15px rgba(0, 0, 0, .8));
+      }
+
+      .search {
+        display: inline-block;
+        min-width: 300px;
+        max-width: 480px;
+        width: 100%;
+
+        @include split-right(150px);
+        .l {
+          input {
+            @include input();
+            min-width: 120px;
+            width: 100%;
+          }
+        }
+        .r {
+          margin-top: 1px;
+          padding-left: 10px;
+          button {
+            @include button();
+            padding-left: 30px;
+            padding-right: 30px;
+          }
+        }
+      }
+    }
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: 100px;
+      background: $mainBackgroundColor $mainBackgroundImage;
+      z-index: 9999;
+    }
+    #container {
+      text-align: center;
+
+      #units {
+        position: relative;
+        display: inline-block;
+
+        .unit {
+          display: inline-block;
+          width: 300px;
+          margin: 10px;
+          @include box-shadow(0 5px 10px rgba(0,0,0,.175));
+
+          &.hide {
+            display: none;
+          }
+          &:hover {
+            .img {
+              img {
+                @include filter(blur(5px));
+              }
+            }
+          }
+          .img {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            img {
+              @include transition(all 0.3s ease);
+              width: 100%;
+            }
+          }
+          .cover {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include opacity(0);
+            @include transition(all 0.3s ease);
+            @include background-image(
+                linear-gradient(
+                    rgba(0,0,0, .0) 10%,
+                    rgba(0,0,0, .1) 20%,
+                    rgba(0,0,0, .1) 30%,
+                    rgba(0,0,0, .1) 40%,
+                    rgba(0,0,0, .2) 50%,
+                    rgba(0,0,0, .3) 60%,
+                    rgba(0,0,0, .4) 70%,
+                    rgba(0,0,0, .5) 80%,
+                    rgba(0,0,0, .6) 90%,
+                    rgba(0,0,0, .7) 100%
+                ));
+            &:hover {
+              @include opacity(1);
+            }
+
+            .ownername {
+              word-break:break-all;
+              padding: 10px;
+              color: rgba(255, 255, 255, .6);
+
+              display: inline-block;
+              width: 100%;
+
+              position: absolute;
+              bottom: 0;
+              left: 0;
+
+              text-align: right;
+            }
+            .title {
+              word-break:break-all;
+              padding: 10px;
+              color: #fff;
+
+              display: inline-block;
+              width: 100%;
+
+              position: absolute;
+              top: 20px;
+              left: 0;
+
+              text-align: center;
+            }
+          }
+        }
+      }
+      @for $i from 1 through 10 {
+          @media only screen and (min-width : 320px * $i) {
+              #units {
+                  width: 320px * $i;
+              }
+          }
+      }
+    }
+  }
+}
+*.loading {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  margin-top: 5px;
+
+  @include border-radius(50%);
+  @include box-shadow(inset 0 0 5px rgba(68, 68, 68, 0.7), 0 0 5px rgba(255, 255, 255, 0.475));
+  $loadingWeight: 6px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    @include border-radius(50%);
+    @include animation (spin .5s infinite linear);
+    @include background-image(linear-gradient(transparent 60%, rgba(0, 0, 0, 0.3) 100%));
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    margin: auto;
+    width: calc(100% - #{$loadingWeight} * 2);
+    height: calc(100% - #{$loadingWeight} * 2);
+    top: $loadingWeight;
+    left: $loadingWeight;
+    background: $mainBackgroundColor $mainBackgroundImage;
+
+    @include border-radius(50%);
+    @include box-shadow(0 0 5px rgba(68, 68, 68, 0.7), inset 0 0 5px rgba(255, 255, 255, 0.475));
+  }
+  @include keyframes(spin) {
+    to {
+      @include rotate(360deg);
+    }
+  }
+}
