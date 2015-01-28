@@ -19,7 +19,7 @@ Demo: [http://comdan66.github.io/flickr/](http://comdan66.github.io/flickr/)
 <br/>
 ## 使用
 * 於[網頁](http://comdan66.github.io/flickr/)上方的搜尋列輸入欲搜尋的圖片關鍵字。
-* 多組關鍵字可用 **空白鍵**、**逗號(,)** 隔開，ex: ptt,正妹
+* 多組關鍵字可用 **空白鍵**、**逗號(,)** 隔開，ex: ptt,正妹。
 * 關鍵字輸入完畢後，按下 Enter鍵 或按下 搜尋按鈕 即可。
 
 <br/>
