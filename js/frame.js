@@ -86,7 +86,7 @@ $(function () {
             href: 'https://www.flickr.com/photos/' + t.owner + '/' + t.id
           };
           var $obj = $($(_.template ($('#_unit').html (), s) (s)));
-          $obj.prependTo ($units).addClass ('hide');
+          $obj.appendTo ($units).addClass ('hide');
           setPictureFeature ($obj, true);
         });
       }
