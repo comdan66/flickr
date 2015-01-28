@@ -29,7 +29,6 @@ $(function () {
           padding : 0,
           helpers : { overlay: { locked: false }, title : { type : 'over' } }
         });
-      $obj.OAimgLiquid ();
       if (isAppended) masonry.appended ($obj.get (0));
       else masonry.prepended ($obj.get (0));
       return $obj;
