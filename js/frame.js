@@ -43,7 +43,7 @@ $(function () {
             'per_page=' + limit,
             'page=' + offset,
             'extras=url_m,owner_name',
-            'sort=date-posted-desc',
+            'sort=interestingness-desc',
             'format=json'
           ].join ('&');
     offset += limit;
