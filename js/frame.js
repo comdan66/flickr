@@ -22,6 +22,13 @@ $(function () {
   var setPictureFeature = function ($obj, isAppended) {
     $obj.imagesLoaded (function () {
       $obj.find ('.img').css ({'height': $obj.removeClass ('hide').find ('.img img').css ('height')});
+      $obj.find ('.cover').fancybox ({
+          beforeLoad: function() {
+            this.title = '<a href="' + $(this.element).data ('href') + '" target="_blank">' + $(this.element).attr ('title') + '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><path d="M4 1h7q0.414 0 0.707 0.293t0.293 0.707-0.293 0.707-0.707 0.293h-7q-0.414 0-0.707 0.293t-0.293 0.707v16q0 0.414 0.293 0.707t0.707 0.293h16q0.414 0 0.707-0.293t0.293-0.707v-7q0-0.414 0.293-0.707t0.707-0.293 0.707 0.293 0.293 0.707v7q0 1.242-0.879 2.121t-2.121 0.879h-16q-1.242 0-2.121-0.879t-0.879-2.121v-16q0-1.242 0.879-2.121t2.121-0.879zM16 1h6q0.414 0 0.707 0.293t0.293 0.707v6q0 0.414-0.293 0.707t-0.707 0.293-0.707-0.293-0.293-0.707v-3.586l-8.297 8.297q-0.289 0.289-0.703 0.289-0.43 0-0.715-0.285t-0.285-0.715q0-0.414 0.289-0.703l8.297-8.297h-3.586q-0.414 0-0.707-0.293t-0.293-0.707 0.293-0.707 0.707-0.293z" fill="#000000"></path></svg></a>';
+          },
+          padding : 0,
+          helpers : { overlay: { locked: false }, title : { type : 'over' } }
+        });
       $obj.OAimgLiquid ();
       if (isAppended) masonry.appended ($obj.get (0));
       else masonry.prepended ($obj.get (0));
@@ -42,7 +49,7 @@ $(function () {
             'tags=' + tags.join (","),
             'per_page=' + limit,
             'page=' + offset,
-            'extras=url_m,owner_name',
+            'extras=url_m,owner_name,url_l',
             'sort=interestingness-desc',
             'format=json'
           ].join ('&');
@@ -73,6 +80,7 @@ $(function () {
           var s = {
             id: t.id,
             src: t.url_m,
+            src2: t.url_l,
             title: t.title,
             ownername: t.ownername,
             href: 'https://www.flickr.com/photos/' + t.owner + '/' + t.id
@@ -106,4 +114,8 @@ $(function () {
       scroll_timer = setTimeout (loadData, 500);
     }
   }.bind (this)).scroll ();
+
+
+
+
 });

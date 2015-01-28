@@ -140,6 +140,7 @@ html {
             position: absolute;
             top: 0;
             left: 0;
+            cursor: pointer;
             @include opacity(0);
             @include transition(all 0.3s ease);
             @include background-image(
@@ -245,4 +246,40 @@ html {
       @include rotate(360deg);
     }
   }
+}
+
+.fancybox-title {
+  font-size: 16px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0);
+  @include text-shadow(1px 1px 1px rgba(53, 53, 53, 0.5));
+
+  @include background-image(
+                linear-gradient(
+                    rgba(0,0,0, .0) 10%,
+                    rgba(0,0,0, .7) 100%
+                ));
+  a {
+    width: 100%;
+    text-decoration: none;
+    @include a (rgba(230, 230, 230, .6), rgba(230, 230, 230, 1), false);
+
+    svg {
+      margin-left: 5px;
+      float: right;
+      @include svg-color(rgba(230, 230, 230, .6), rgba(230, 230, 230, .6));
+    }
+
+    &:hover {
+      svg {
+        @include svg-color(rgba(230, 230, 230, 1), rgba(230, 230, 230, 1));
+      }
+    }
+  }
+}
+.fancybox-type-image {
+  z-index: 999999 !important;
 }

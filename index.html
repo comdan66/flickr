@@ -20,6 +20,10 @@
     <meta name="keywords" content="吳政賢 | OA Wu | OA's Flickr | Flickr API | jQuery | javascript | scss | sass | html | css" />
     <meta name="author" content="吳政賢(OA Wu)" />
 
+    <link href="./res/fancyBox_v2.1.5/jquery.fancybox.css" rel="stylesheet" type="text/css">
+    <link href="./res/fancyBox_v2.1.5/jquery.fancybox-buttons.css" rel="stylesheet" type="text/css">
+    <link href="./res/fancyBox_v2.1.5/jquery.fancybox-thumbs.css" rel="stylesheet" type="text/css">
+
     <link href="./css/frame.css" rel="stylesheet" type="text/css">
 
     <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
@@ -29,6 +33,11 @@
     <script src="./res/oa-imgLiquid.js" language="javascript" type="text/javascript" /></script>
     <script src="./js/ga.js" language="javascript" type="text/javascript" /></script>
     <script src="./js/frame.js" language="javascript" type="text/javascript" /></script>
+
+    <script src="./res/fancyBox_v2.1.5/jquery.fancybox.js" language="javascript" type="text/javascript"></script>
+    <script src="./res/fancyBox_v2.1.5/jquery.fancybox-buttons.js" language="javascript" type="text/javascript"></script>
+    <script src="./res/fancyBox_v2.1.5/jquery.fancybox-thumbs.js" language="javascript" type="text/javascript"></script>
+    <script src="./res/fancyBox_v2.1.5/jquery.fancybox-media.js" language="javascript" type="text/javascript"></script>
 
   </head>
   <body lang="zh-tw">
@@ -57,15 +66,15 @@
     <div class='img'>
       <img src='<%=src%>' />
     </div>
-    <a href='<%=href%>' target='_blank'>
-      <div class='cover'>
+      <div class='cover' href='<%=src2%>' title='<%=title%>' data-href='<%=href%>'>
         <div class='title'><%=title%></div>
         <div class='ownername'><%=ownername%></div>
       </div>
-    </a>
+
   </div>
 </script>
-
+<!--     <a href='<%=href%>' target='_blank'>
+    </a> -->
   </body>
 </html>
 

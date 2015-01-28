@@ -292,6 +292,7 @@ html body #container #units .unit .cover {
   position: absolute;
   top: 0;
   left: 0;
+  cursor: pointer;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -moz-transition: all 0.3s ease;
@@ -454,4 +455,66 @@ html body #container #units .unit .cover .title {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+.fancybox-title {
+  font-size: 16px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  background-color: transparent;
+  text-shadow: 1px 1px 1px rgba(53, 53, 53, 0.5);
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIxMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.7)));
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.7) 100%);
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.7) 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.7) 100%);
+}
+.fancybox-title a {
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(230, 230, 230, 0.6);
+  font-weight: bold;
+  text-decoration: none;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.fancybox-title a:hover {
+  color: #e6e6e6;
+}
+.fancybox-title a svg {
+  margin-left: 5px;
+  float: right;
+}
+.fancybox-title a svg, .fancybox-title a svg * {
+  color: rgba(230, 230, 230, 0.6);
+  fill: rgba(230, 230, 230, 0.6);
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.fancybox-title a svg:hover, .fancybox-title a svg:hover * {
+  color: rgba(230, 230, 230, 0.6);
+  fill: rgba(230, 230, 230, 0.6);
+}
+.fancybox-title a:hover svg, .fancybox-title a:hover svg * {
+  color: #e6e6e6;
+  fill: #e6e6e6;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.fancybox-title a:hover svg:hover, .fancybox-title a:hover svg:hover * {
+  color: #e6e6e6;
+  fill: #e6e6e6;
+}
+
+.fancybox-type-image {
+  z-index: 999999 !important;
 }
