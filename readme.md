@@ -13,11 +13,11 @@
 
 <br/>
 ## Demo
-Demo: [http://works.ioa.tw/flickr/](http://works.ioa.tw/flickr/)
+Demo: [https://works.ioa.tw/flickr/index.html](https://works.ioa.tw/flickr/index.html)
 
 <br/>
 ## 使用
-* 於[網頁](http://works.ioa.tw/flickr/)上方的搜尋列輸入欲搜尋的圖片關鍵字。
+* 於[網頁](https://works.ioa.tw/flickr/index.html)上方的搜尋列輸入欲搜尋的圖片關鍵字。
 * 多組關鍵字可用 **空白鍵**、**逗號(,)** 隔開，ex: ptt,正妹。
 * 關鍵字輸入完畢後，按下 Enter鍵 或按下 搜尋按鈕 即可。
 
@@ -27,7 +27,7 @@ Demo: [http://works.ioa.tw/flickr/](http://works.ioa.tw/flickr/)
 
 * E-mail - <comdan66@gmail.com>
 
-* 作品名稱 - [OA's Flickr](http://works.ioa.tw/flickr/)
+* 作品名稱 - [OA's Flickr](https://works.ioa.tw/flickr/index.html)
 
 * GitHub - [Flickr](https://github.com/comdan66/flickr)
 
